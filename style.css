@@ -1,0 +1,202 @@
+@import url('https://fonts.google.com/specimen/Josefin+Sans');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%),  hsl(0, 100%, 98%));
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left {
+    width: 60%;
+    padding: 0 40px 40px;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: cover;
+}
+
+.right {
+    width: 40%;
+}
+
+.bg-image {
+    background-image: url('images/hero-desktop.jpg');
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.logo {
+    margin: 60px 0;
+    width: 200px;
+    margin-left: 15%;
+}
+
+.bg-mobile {
+    display: none;
+}
+
+main {
+    max-width: 60%;
+    margin-left: 15%;
+}
+
+h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    color: hsl(0, 6%, 24%);
+    line-height: 1.2;
+    margin-bottom: 0;
+    animation: comeinleft 0.7s ease forwards;
+}
+
+@keyframes comeinleft {
+    to {
+        transform: translateX(0);
+    }
+}
+
+h1 span {
+    color: hsl(0, 36%, 70%);
+    font-weight: 200;
+}
+
+p {
+    color:  hsl(0, 36%, 70%);
+    line-height: 26px;
+    margin: 20px 0;
+    transform: translateX(100%);
+    animation: comeinright 0.9s ease forwards;
+}
+
+@keyframes comeinright {
+    to {
+        transform: translateX(0);
+    }
+}
+
+form {
+    position: relative;
+}
+
+
+input {
+    background-color: transparent;
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 15px 30px;
+    height: 55px;
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px hsla(0, 36%, 70%, 0.5);
+}
+
+input::placeholder {
+    color: hsl(0, 36%, 70%);
+}
+
+form.error input {
+    border: 2px solid hsl(0, 93%, 68%);
+}
+
+button {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%),  hsl(0, 74%, 74%));
+    box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 55px;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+button:focus {
+    outline: none;
+}
+
+.error-icon {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 110px;
+}
+
+form.error .error-icon {
+    display: block;
+}
+
+small {
+    display: none;
+    margin-top: 15px;
+    margin-left: 30px;
+    color: hsl(0, 93%, 68%);
+}
+
+form.error small {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .left {
+        width: 100%;
+        padding: 0 40px 40px;
+    }
+    .right {
+        display: none
+    }
+    .bg-mobile {
+        display: block;
+        width: calc(100% + 80px);
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+    .logo {
+        margin: 30px 0;
+        width: 100px;
+    }main {
+        max-width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 14px;
+    }
+    input {
+       
+        font-size: 14px;
+       
+        height: 40px;
+        
+    }
+    button {
+        width: 70px;
+        height: 40px;
+        padding: 10px;
+    }
+    .error-icon {
+        top: 8px;
+        right: 78px;
+    }
+}
